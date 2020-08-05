@@ -13,7 +13,7 @@ public class Tile {
 	}
 	public boolean isFusible(Tile a) {
 		//Methode, die prüft ob zwei Kacheln verschmelzen können
-		if(this.potenz == a.potenz&& fusible &&a.fusible) {
+		if(this.potenz == a.potenz&& fusible &&a.fusible && potenz>0) {
 			return true;
 		}
 		return false;
@@ -24,8 +24,20 @@ public class Tile {
 			fusible=false;
 			return this;
 	}
-	public int get() {
+	public String get() {
 		//getter-Methode die den Anzeigewert der jeweiligen Kachel berechnet
+		if (potenz>0) 
+			return Integer.toString((int) Math.pow(basis,this.potenz));
+		else
+			return "";
+	}
+	public int getPotency() {
+		return potenz;
+	}
+	public void setPotency(int n) {
+		potenz=n;
+	}
+	public int getValue() {
 		return (int) Math.pow(basis,this.potenz);
 	}
 }
