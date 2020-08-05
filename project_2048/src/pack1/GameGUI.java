@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.Color;
@@ -39,12 +38,11 @@ public class GameGUI extends JFrame {
 	JButton btn14 = new JButton();
 	JButton btn15 = new JButton();
 	JButton btn16 = new JButton();
-	JLabel score= new JLabel();
 	Field f = new Field();
 
 
 	public GameGUI(){
-		panel.setLayout(new GridLayout(f.Y,f.X,3,3));
+		panel.setLayout(new GridLayout(4,4,3,3));
 		panel.add(btn1);
 		panel.add(btn2);
 		panel.add(btn3);
@@ -61,7 +59,6 @@ public class GameGUI extends JFrame {
 		panel.add(btn14);
 		panel.add(btn15);
 		panel.add(btn16);
-		panel.add(score);
 		frame.getContentPane().add(panel);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setSize(600, 600);
@@ -84,7 +81,6 @@ public class GameGUI extends JFrame {
 				if(e.getKeyCode() == KeyEvent.VK_LEFT){
 					f.moveLeft();
 					updateField();
-
 				}
 
 				if(e.getKeyCode() == KeyEvent.VK_RIGHT){
@@ -95,40 +91,54 @@ public class GameGUI extends JFrame {
 			});
 		}
 	public void updateField() {
-		
-			btn1.setText((f.field[0][0].get()));
-		
-			btn2.setText((f.field[0][1].get()));
-		
-			btn3.setText((f.field[0][2].get()));
-		
-			btn4.setText((f.field[0][3].get()));
-		
-			btn5.setText((f.field[1][0].get()));
-		
-			btn6.setText((f.field[1][1].get()));
-		
-			btn7.setText((f.field[1][2].get()));
-		
-			btn8.setText((f.field[1][3].get()));
-		
-			btn9.setText((f.field[2][0].get()));
-		
-			btn10.setText((f.field[2][1].get()));
-		
-			btn11.setText((f.field[2][2].get()));
-		
-			btn12.setText((f.field[2][3].get()));
-		
-			btn13.setText((f.field[3][0].get()));
-		
-			btn14.setText((f.field[3][1].get()));
-		
-			btn15.setText((f.field[3][2].get()));
-		
-			btn16.setText((f.field[3][3].get()));
-			
-			score.setText(Integer.toString(f.score));
+		if(!(f.field[0][0]==null)) {
+			btn1.setText(Integer.toString(f.field[0][0].get()));
+		}else btn1.setText(null);
+		if(!(f.field[0][1]==null)) {
+			btn2.setText(Integer.toString(f.field[0][1].get()));
+		}else btn2.setText(null);
+		if(!(f.field[0][2]==null)) {
+			btn3.setText(Integer.toString(f.field[0][2].get()));
+		}else btn3.setText(null);
+		if(!(f.field[0][3]==null)) {
+			btn4.setText(Integer.toString(f.field[0][3].get()));
+		}else btn4.setText(null);
+		if(!(f.field[1][0]==null)) {
+			btn5.setText(Integer.toString(f.field[1][0].get()));
+		}else btn5.setText(null);
+		if(!(f.field[1][1]==null)) {
+			btn6.setText(Integer.toString(f.field[1][1].get()));
+		}else btn6.setText(null);
+		if(!(f.field[1][2]==null)) {
+			btn7.setText(Integer.toString(f.field[1][2].get()));
+		}else btn7.setText(null);
+		if(!(f.field[1][3]==null)) {
+			btn8.setText(Integer.toString(f.field[1][3].get()));
+		}else btn8.setText(null);
+		if(!(f.field[2][0]==null)) {
+			btn9.setText(Integer.toString(f.field[2][0].get()));
+		}else btn9.setText(null);
+		if(!(f.field[2][1]==null)) {
+			btn10.setText(Integer.toString(f.field[2][1].get()));
+		}else btn10.setText(null);
+		if(!(f.field[2][2]==null)) {
+			btn11.setText(Integer.toString(f.field[2][2].get()));
+		}else btn11.setText(null);
+		if(!(f.field[2][3]==null)) {
+			btn12.setText(Integer.toString(f.field[2][3].get()));
+		}else btn12.setText(null);
+		if(!(f.field[3][0]==null)) {
+			btn13.setText(Integer.toString(f.field[3][0].get()));
+		}else btn13.setText(null);
+		if(!(f.field[3][1]==null)) {
+			btn14.setText(Integer.toString(f.field[3][1].get()));
+		}else btn14.setText(null);
+		if(!(f.field[3][2]==null)) {
+			btn15.setText(Integer.toString(f.field[3][2].get()));
+		}else btn15.setText(null);
+		if(!(f.field[3][3]==null)) {
+			btn16.setText(Integer.toString(f.field[3][3].get()));
+		}else btn16.setText(null);
 	}
 
 	public static void main(String[] args) {
