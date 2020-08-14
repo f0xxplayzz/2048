@@ -1,18 +1,10 @@
-package pack1;
+package package_2048_test;
 
-import java.awt.EventQueue;
 import java.awt.GridLayout;
-import java.awt.List;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JButton;
 import javax.swing.JPanel;
-import java.awt.Color;
 
 public class GameGUI extends JFrame {
 
@@ -38,7 +30,7 @@ public class GameGUI extends JFrame {
 	JButton btn14 = new JButton();
 	JButton btn15 = new JButton();
 	JButton btn16 = new JButton();
-	Field f = new Field();
+	Field f = new Field(this);
 
 
 	public GameGUI(){
@@ -66,30 +58,10 @@ public class GameGUI extends JFrame {
 		this.updateField();
 		panel.setFocusable(true);
 		panel.requestFocus();
-		panel.addKeyListener(new KeyAdapter() {
-			public void keyPressed(KeyEvent e) {
-				if(e.getKeyCode() == KeyEvent.VK_UP){
-					f.moveUp();
-					updateField();
-				}
+		panel.addKeyListener(new KeyboardListener(f));
 
-				if(e.getKeyCode() == KeyEvent.VK_DOWN){
-					f.moveDown();
-					updateField();
-				}
-
-				if(e.getKeyCode() == KeyEvent.VK_LEFT){
-					f.moveLeft();
-					updateField();
-				}
-
-				if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-					f.moveRight();
-					updateField();
-				}
-			}
-			});
-		}
+	}
+	
 	public void updateField() {
 		if(!(f.field[0][0]==null)) {
 			btn1.setText(Integer.toString(f.field[0][0].get()));
@@ -142,8 +114,8 @@ public class GameGUI extends JFrame {
 	}
 
 	public static void main(String[] args) {
-				GameGUI t =new GameGUI();
-			}
+		GameGUI t =new GameGUI();
+	}
 
 		
 }

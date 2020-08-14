@@ -1,4 +1,4 @@
-package pack1;
+package package_2048_test;
 
 public class Tile {
 	//Klasse für jede einzelne Kachel des Spielfeldes
